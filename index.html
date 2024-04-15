@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+         body {
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        #stop
+        {
+            margin-top: 20px;
+        }
+        
+
+    </style>
+  
+</head>
+
+<body>
+    <h1>This page Genrate for Random color in the body</h1>
+    <button  id="start">START</button><br>
+    <button  id="stop">STOP</button><br>
+
+
+<script>
+    
+    function getrandomcolor() {
+            var hexcode = '0123456789ABCDEF';
+            var color = '#';
+
+            for (var i = 0; i<6; i++) {
+
+                color +=hexcode[Math.floor(Math.random() * 16)];
+                // let c = Math.floor(Math.random() * 16);
+                // color += hexcode[c];
+
+            }
+            return color;
+        };
+
+     
+
+
+    
+
+           // setInterval(changecolor, 1000);
+
+/////////////////////////////////////////////////////
+let intervalid;
+const startchangingcolor=function()
+{
+    function changecolor() {
+              document.body.style.backgroundColor=getrandomcolor();
+        }
+        intervalid=setInterval(changecolor, 1000);
+
+};
+
+
+////////////////////////////////////////////
+
+const stopchanging=function()
+{
+    clearInterval(intervalid);
+}
+
+
+
+
+
+
+
+/////////////////////////////////////////
+// function startchangingcolor()
+// {
+//     setInterval(changecolor, 1000);
+
+
+// }
+
+///////////////////////////////////////////////
+
+
+
+
+document.querySelector('#start').addEventListener('click',startchangingcolor);
+document.querySelector('#stop').addEventListener('click',stopchanging)
+
+
+
+
+
+
+
+
+
+
+</script>
+
+<!-- 
+    <script>
+
+        //  let v=getrandomcolor();///if use this line of code inside the changecolor then will be noting heppen
+        //  console.log(v);
+
+        function changecolor() {
+              document.body.style.backgroundColor=getrandomcolor();
+        }
+
+        setInterval(changecolor, 1000);
+
+    
+ -->
+
+<!-- 
+        // console.log(Math.floor(Math.random()*16));
+
+        // var hexcode=[0,1,2,3,4,'a'];
+        // for(let i=0; i<=hexcode.length-1; i++)
+        // {
+        //     let color='#';
+        //     color+=hexcode;
+        //     console.log(color+hexcode[i]);
+        // }
+
+ -->
+<!-- 
+        //     function hello()
+        //     {
+
+        //     setInterval(function(){
+        //         console.log(Math.random()*16);
+        //     },1000);
+        // }
+
+        // hello(); -->
+
+
+
+<!-- 
+
+        //this is very simple way 
+    </script> -->
+
+</body>
+
+</html>
